@@ -1,69 +1,136 @@
 # Beyond the Sparkle: The Lost Legacy
 
-Milestone 0 (data truth lock) and Milestone 1 (one playable chapter). English-only, buildless, modular HTML/CSS/JavaScript. All research values come from the supplied notebook's pipeline. No model is fitted in the browser.
+**A 3D story game in the browser, built on a real data-science study of 53,940 diamonds.**
 
-## Run locally
+[![Deploy game to GitHub Pages](https://github.com/ShadenAqeel/beyond-the-sparkle/actions/workflows/pages.yml/badge.svg)](https://github.com/ShadenAqeel/beyond-the-sparkle/actions/workflows/pages.yml)
 
-From this directory:
+### ▶ [Play now: shadenaqeel.github.io/beyond-the-sparkle](https://shadenaqeel.github.io/beyond-the-sparkle/)
+
+There is nothing to install: open the link in Chrome, Edge, Firefox or Safari on a laptop or desktop. A full playthrough takes about 6–8 minutes, plus optional research.
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/hollow-scale.jpg" alt="The Hollow Scale slams its gavel in the sunken tribunal"></td>
+    <td><img src="docs/screenshots/twin-warden.jpg" alt="The Twin Warden raise their weapons in the hall split by a line of light"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/veiled-mirror.jpg" alt="The Veiled Mirror and a lunging reflection in the hall of mirrors"></td>
+    <td><img src="docs/screenshots/nameless-exile.jpg" alt="The Nameless Exile in its chamber walled with fire"></td>
+  </tr>
+</table>
+
+## About
+
+Three diamonds were taken from a forgotten kingdom, and three corrupted guardians bar their return. You explore a candle-lit shrine, defeat each guardian, return its diamond and wake the scholar who guarded it. Each scholar remembers a different part of the truth, and each part is a real step in a clustering study:
+
+| Chapter | Guardian | Research idea |
+| --- | --- | --- |
+| Form | The Hollow Scale | Cleaning and standardizing six physical measurements |
+| Division | The Twin Warden | Two K-Means groups of diamonds |
+| Memory | The Veiled Mirror | PCA: two components keep 88.12% of the variance |
+| Beyond the boundary | The Nameless Exile | DBSCAN and the observations left outside the clusters |
+
+Every number in the game comes from the verified export of the original notebook. The browser never fits a model.
+
+## Features
+
+- **Four distinct boss fights**, each with its own procedurally built guardian, arena, lighting and particle effects. Every guardian has its own idle personality, readable attack telegraphs, hit reactions and defeat.
+- **Turn-based combat about reading your opponent:** strike an opening for a critical hit, guard a real blow to parry, and chain good reads into a finisher. The final boss changes its pattern when enraged.
+- **Interactive discoveries:** find an impossible record in the real CSV data, compare group profiles, and fold six measurements into a live PCA projection.
+- **Research Codex:** local interactive charts (Plotly) for distributions, K-Means, PCA variance and DBSCAN, plus a downloadable copy of the original notebook.
+- **Saves automatically:** progress is stored in your browser, and **Continue Journey** resumes it.
+- **Presenter Mode** for live demos: jump to any chapter or resolve a battle instantly without touching the saved story.
+- **Runs on ordinary laptops:** Performance Mode is on by default, with an optional Quality Mode. There is also a Reduce motion option, and the synthesized sound starts muted.
+
+## How to play
+
+| Action | Mouse | Keyboard |
+| --- | --- | --- |
+| Approach an object | Click its marker | Tab / Enter |
+| Strike | **Strike** button | J, A or ← |
+| Guard | **Guard** button | K, D or → |
+| Close a panel / step back | × | Esc |
+
+Start at the **living flame**: it opens all three chambers. An empty pedestal also offers its own chamber. Watch the cue above the buttons: **HEAVY** means guard; **OPENING** means strike.
+
+**Requirements:** a browser with WebGL 2 and hardware acceleration enabled, used with a mouse and keyboard.
+
+## Run it locally
+
+You need [Node.js](https://nodejs.org/) 22.12 or newer. The game lives in [`prototype-3d/`](prototype-3d/).
 
 ```sh
-python -m http.server 8000
+git clone https://github.com/ShadenAqeel/beyond-the-sparkle.git
+cd beyond-the-sparkle/prototype-3d
+npm ci
+npm run dev
 ```
 
-Open **http://localhost:8000**. No npm installation or internet connection is needed to play. Open through HTTP; browsers restrict ES modules and JSON fetches under `file://`.
+Open the printed address, normally http://127.0.0.1:5173/. On Windows PowerShell, use `npm.cmd` if script execution is blocked.
 
-Select **New Journey**, visit the **Chamber of Form**, face the **Hollow Scale**, answer its question, take the diamond, return it to the **Form** pedestal, meet the **Stonekeeper**, and choose **Reveal Knowledge**. Return to the shrine from the Codex to complete the loop.
+To try the exact production build that GitHub Pages serves:
 
-Combat is turn-based. Attack deals 1 damage and receives the announced move. Defend blocks the current move and protects the next attack from up to 1 damage. The pattern repeats normal (1), heavy (2). One winning sequence is **Attack → Defend → Attack → Defend → Attack**. There are no timing requirements. Wrong knowledge answers give a hint without repeating combat. Retry restores both HP values; simultaneous zero HP counts as a loss.
+```sh
+npm run build
+npm run preview -- --port 4173
+```
 
-Story saves use `beyond-the-sparkle.story.v1` in this origin's localStorage. Progress is checkpointed at victory, collection, pedestal return, revelation, and scene changes. An interrupted battle restarts when re-entered. Reload and **Continue Journey** restore progress. New Journey asks before replacing an existing story. If browser storage is unavailable, the game continues in memory and explains the limitation.
+Then open http://127.0.0.1:4173/. Don't open `dist/index.html` directly: browsers block its modules and data under `file://`.
 
-**Presenter Mode** previews only the implemented chapter: scene jumps, instant encounter resolution, skip animations, narrative visibility, and full chart views. It never writes its progress or settings to the normal story save. **Return to Story** restores the prior scene. Later chapter buttons explain their milestone locks.
+## Deployment
 
-Sound starts muted. The sound button opts into two quiet original synthesized ambient tones; there are no downloaded audio tracks. Motion respects the device preference and has a persistent toggle. Information and progression work without either.
+Every push to `main` runs [`.github/workflows/pages.yml`](.github/workflows/pages.yml), which:
 
-## Reproduce the research export
+1. installs dependencies with `npm ci` (Node 22),
+2. runs the unit tests (game rules, saves and research data),
+3. builds `prototype-3d/` with Vite and checks that every model, texture, dataset and chart library is in the bundle,
+4. publishes `prototype-3d/dist` to GitHub Pages.
 
-The original files are unchanged in `reference/`. The CSV is the original user-supplied data, not a replacement.
+The build uses a relative base path (`./`) and every asset URL is built from it. The same build therefore works at `https://<user>.github.io/beyond-the-sparkle/`, at a custom-domain root and in local preview. The game has no client-side routes, so Pages needs no rewrite or 404 configuration.
+
+Saves are stored per website address. Progress made on one address (for example localhost or a custom domain) does not carry over to another.
+
+## Tests
+
+From `prototype-3d/`:
+
+```sh
+npm run test:unit            # game rules, save system, verified research data
+node tools/smoke-combat.mjs  # plays real fights in a browser (start `npm run dev` first; set BROWSER_PATH to Chrome or Edge)
+npx playwright test          # full browser suite (uses Microsoft Edge by default)
+```
+
+## Project structure
+
+```text
+prototype-3d/            The 3D game (Vite + Three.js); this is what is deployed
+  src/                   Game code: scenes, guardians, arenas, combat, saves, Codex
+  public/                Models, textures, verified data, Plotly, notebook, licenses
+  tests/, checks/, tools/  Browser tests, unit tests, QA and profiling tools
+  README.md              Detailed design, accessibility and maintenance notes
+data/, reference/        Verified research export and the original notebook and dataset
+scripts/                 Python exporter that reproduces the research results
+index.html, js/, css/    The earlier 2D prototype (Milestone 1), kept for reference
+```
+
+## Reproducing the research
+
+The research values were exported from the original notebook and checked against it. To reproduce them (Python 3.11+):
 
 ```sh
 python -m venv .venv
-. .venv/bin/activate
+.venv\Scripts\activate         # macOS/Linux: . .venv/bin/activate
 pip install -r requirements.txt
 python scripts/export_notebook_data.py
 ```
 
-The pinned environment uses Python 3.11 or later. It reproduces cleaning, StandardScaler, selected two-group K-Means before/after two-component PCA, and the notebook's selected DBSCAN settings. Silhouettes use the notebook's 3,000-row sample and seed. The 35 checks compare against saved notebook anchors and published baseline results; failure prevents export. The notebook's parameter sweeps are not rerun or altered.
+The verified results: 53,940 → 53,893 rows after cleaning, six standardized physical features, two K-Means groups (silhouette 0.429 before PCA, 0.487 after), two principal components retaining 88.12% of the variance, and DBSCAN with one main cluster and 311 noise observations after PCA. The two silhouette scores are computed in different spaces, so they do not by themselves prove an overall improvement.
 
-Verified results: **53,940 → 53,893 rows**, **47 removed**, **88.122061% variance retained**, K-Means silhouettes **0.429 / 0.487**, DBSCAN noise **804 / 311**. Original-space K-Means raw label 0 is larger (median 1.11 ct, $6,055.50), and raw label 1 is smaller (median 0.41 ct, $1,053). In this verified after-PCA fit, the raw labels reverse. Color/semantic mapping uses median carat independently in each fit.
+## Credits and licenses
 
-Duplicates are retained, as in the notebook. Price, cut, color and clarity are excluded from clustering. The two silhouette scores use different feature spaces and do not establish an overall model improvement. DBSCAN noise is relative to density settings and is not a defect classification. Its silhouette includes noise as a group.
+- Scholar characters are adapted from **Old Man** by Bake3D ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). The four guardians and their arenas are original procedural geometry, canvas textures and shaders.
+- [Three.js](https://threejs.org/) (MIT) and [Plotly.js](https://plotly.com/javascript/) (MIT).
+- Cinzel, Cormorant Garamond and Inter fonts (SIL Open Font License).
+- License texts ship with the game in `prototype-3d/public/licenses/`, `public/models/LICENSE.txt` and `public/vendor/`. Asset details are in [`prototype-3d/art-source/PROVENANCE.md`](prototype-3d/art-source/PROVENANCE.md).
 
-See [the data contract](docs/DATA_CONTRACT.md), [implementation report](docs/IMPLEMENTATION_REPORT.md), and [asset checklist](assets/README.md).
-
-## Checks and static build
-
-The only Node dependencies are for DOM tests; they are not needed at runtime.
-
-```sh
-npm ci
-npm test
-python scripts/build.py
-python scripts/check_static.py
-```
-
-The `dist/` artifact contains relative-path HTML, ES modules, CSS, JSON, local fonts, Plotly, and the downloadable original notebook. It omits the full CSV, reference PDF, implementation spec, exporter, tests, and Node packages. After building, `python -m http.server 8000 --directory dist` serves the deployment artifact locally.
-
-Plotly Basic 2.35.2 is vendored for offline interactive histogram hover, zoom, reset, and SVG export. Each chart also has an accessible bin-count table. Fonts are vendored with their SIL OFL licenses. No external asset request is required.
-
-## GitHub Pages
-
-No deployment was performed. To deploy later, put this source in a GitHub repository, choose **Settings → Pages → Source: GitHub Actions**, and manually run the included **Deploy static prototype** workflow. It builds the already-verified JSON into `dist/`, checks its local asset references, and uploads that directory. It does not rerun the models on GitHub.
-
-Alternatively, use the supplied static-site zip as the contents of a Pages branch and select that branch/root in Pages settings. Preserve the directory tree and `.nojekyll`. Relative paths work under a repository subpath; there is no SPA router or server dependency.
-
-## Scope of this delivery
-
-Only Form is playable. Division/Memory, Exile, Eclipse Diamond, Hidden Archive, and the ending remain locked. Their data is exported for future chapters, but no later boss or chart page is implemented. The shrine's three stone slots are story chapters, not three statistical clusters. All narrative and symbols are original fiction, with no claim about a historical diamond.
-
-Original SVG artwork is a cohesive functional placeholder set. Replace the five art files listed in `assets/README.md` with final illustrated work in the same composition slots. Browser visual QA remains outstanding because the supplied cloud environment exposed no shared-browser control tool; automated checks do not establish actual viewport layout, native focus trapping, Web Audio playback, or Plotly rendering in a browser.
+The story and its symbols are original fiction; the gemstones are story chapters, not statistical clusters.

@@ -1,6 +1,44 @@
+# Dependencies
 node_modules/
-dist/
 .venv/
+venv/
 __pycache__/
 *.pyc
+
+# Build output (GitHub Actions builds and deploys prototype-3d/dist)
+dist/
+.vite/
+*.tsbuildinfo
+
+# Test, QA and profiling artifacts
+test-results/
+playwright-report/
+blob-report/
+coverage/
+prototype-3d/qa/
+prototype-3d/.checkpoints/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+*.tmp
+*.temp
+.cache/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
 .DS_Store
+Thumbs.db
+desktop.ini

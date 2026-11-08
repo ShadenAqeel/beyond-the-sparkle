@@ -1,32 +1,70 @@
-name: Deploy static prototype
+name: Deploy game to GitHub Pages
+
+# Builds the 3D game in prototype-3d/ with Vite and publishes prototype-3d/dist.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: false
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: prototype-3d
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: prototype-3d/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
+      - name: Verify game rules, saves and research data
+        run: npm run test:unit
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Check the bundle contains every runtime asset
+        run: |
+          for f in index.html models/stonekeeper-base.glb models/keeper-heads.glb art/weathered-limestone.webp \
+                   art/stonekeeper-portrait-3d.webp data/summary.json data/challenge-records.json \
+                   vendor/plotly-basic-2.35.2.min.js research/project.ipynb; do
+            test -s "dist/$f" || { echo "::error::missing dist/$f"; exit 1; }
+          done
+          if grep -RIl --include='*.html' --include='*.js' --include='*.css' -E '(src|href)="/[^/]' dist; then
+            echo "::error::root-absolute asset path found; GitHub Pages serves this site from a sub-path"; exit 1
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: prototype-3d/dist
+
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Assemble verified static files
-        run: python scripts/build.py
-      - name: Check relative asset references
-        run: python scripts/check_static.py
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-      - name: Deploy Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
