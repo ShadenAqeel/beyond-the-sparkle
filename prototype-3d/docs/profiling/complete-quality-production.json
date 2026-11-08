@@ -1,0 +1,394 @@
+{
+  "date": "2026-11-07T20:58:13.906Z",
+  "mode": "quality",
+  "url": "http://127.0.0.1:4173/",
+  "readyToEnterMs": 4011,
+  "hardware": {
+    "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00004628) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "gpuTimingSupported": true,
+    "viewport": [
+      1440,
+      1000
+    ],
+    "drawingBuffer": [
+      1440,
+      1000
+    ],
+    "pixelRatio": 1
+  },
+  "inventory": {
+    "meshes": 349,
+    "geometries": 209,
+    "geometryBufferMiB": 61.618656158447266,
+    "sourceTextureEstimateMiB": 56.187500000000014,
+    "lights": [
+      {
+        "type": "HemisphereLight",
+        "shadow": false
+      },
+      {
+        "type": "SpotLight",
+        "shadow": true,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "DirectionalLight",
+        "shadow": true,
+        "map": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "type": "PointLight",
+        "shadow": false,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "PointLight",
+        "shadow": true,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "PointLight",
+        "shadow": false,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "SpotLight",
+        "shadow": false,
+        "map": [
+          512,
+          512
+        ]
+      }
+    ]
+  },
+  "phases": [
+    {
+      "name": "restored-shrine-idle",
+      "cameraMotionOnly": false,
+      "samples": 107,
+      "averageFPS": 30.391683472139718,
+      "minimumInstantaneousFPS": 10.787486517029093,
+      "meanFrameMs": 32.9037383176456,
+      "p95FrameMs": 38.5,
+      "worstFrameMs": 92.69999998807907,
+      "meanRenderSubmitMs": 8.47663551179048,
+      "meanDrawCalls": 223,
+      "meanTriangles": 94438,
+      "textureObjects": 30,
+      "meanGpuMs": 26.500291923076922,
+      "gpuSamples": 13
+    },
+    {
+      "name": "flame-transition",
+      "cameraMotionOnly": true,
+      "interactionReadyMs": 1679,
+      "samples": 34,
+      "averageFPS": 30.246419358670664,
+      "minimumInstantaneousFPS": 25.188916884137917,
+      "meanFrameMs": 33.06176470483051,
+      "p95FrameMs": 38,
+      "worstFrameMs": 39.69999998807907,
+      "meanRenderSubmitMs": 7.9882352983250335,
+      "meanDrawCalls": 208.85294117647058,
+      "meanTriangles": 91108.35294117648,
+      "textureObjects": 30,
+      "meanGpuMs": 26.892562000000005,
+      "gpuSamples": 5
+    },
+    {
+      "name": "three-scholar-crypt-descent",
+      "cameraMotionOnly": true,
+      "interactionReadyMs": 5401,
+      "samples": 83,
+      "averageFPS": 29.493284059537913,
+      "minimumInstantaneousFPS": 8.474576271186441,
+      "meanFrameMs": 33.906024096241914,
+      "p95FrameMs": 47.299999952316284,
+      "worstFrameMs": 118,
+      "meanRenderSubmitMs": 8.898795178855758,
+      "meanDrawCalls": 172.19277108433735,
+      "meanTriangles": 284470.1445783133,
+      "textureObjects": 33,
+      "meanGpuMs": 26.773457999999998,
+      "gpuSamples": 10
+    },
+    {
+      "name": "three-scholar-crypt-idle",
+      "cameraMotionOnly": false,
+      "samples": 129,
+      "averageFPS": 37.226214180462364,
+      "minimumInstantaneousFPS": 28.089887621637217,
+      "meanFrameMs": 26.86279069776683,
+      "p95FrameMs": 32.700000047683716,
+      "worstFrameMs": 35.60000002384186,
+      "meanRenderSubmitMs": 3.9372093016787093,
+      "meanDrawCalls": 72,
+      "meanTriangles": 170124,
+      "textureObjects": 33,
+      "meanGpuMs": 20.2562946875,
+      "gpuSamples": 16
+    },
+    {
+      "name": "hollow-scale-battle",
+      "cameraMotionOnly": false,
+      "samples": 174,
+      "averageFPS": 50.23819835426592,
+      "minimumInstantaneousFPS": 34.60207608174856,
+      "meanFrameMs": 19.905172413793103,
+      "p95FrameMs": 25.399999976158142,
+      "worstFrameMs": 28.900000035762787,
+      "meanRenderSubmitMs": 6.803448275588025,
+      "meanDrawCalls": 45,
+      "meanTriangles": 50856,
+      "textureObjects": 36,
+      "meanGpuMs": 15.450508181818181,
+      "gpuSamples": 22
+    },
+    {
+      "name": "twin-warden-battle",
+      "cameraMotionOnly": false,
+      "samples": 158,
+      "averageFPS": 45.56728384411559,
+      "minimumInstantaneousFPS": 21.00840335082186,
+      "meanFrameMs": 21.945569620102265,
+      "p95FrameMs": 29.19999998807907,
+      "worstFrameMs": 47.60000002384186,
+      "meanRenderSubmitMs": 8.89873417721519,
+      "meanDrawCalls": 49,
+      "meanTriangles": 98058,
+      "textureObjects": 38,
+      "meanGpuMs": 16.8182257,
+      "gpuSamples": 20
+    },
+    {
+      "name": "player-strike-and-hit-reaction",
+      "cameraMotionOnly": false,
+      "samples": 57,
+      "averageFPS": 37.6585623672715,
+      "minimumInstantaneousFPS": 11.31221719762109,
+      "meanFrameMs": 26.55438596533056,
+      "p95FrameMs": 53.90000003576279,
+      "worstFrameMs": 88.39999997615814,
+      "meanRenderSubmitMs": 15.489473681700858,
+      "meanDrawCalls": 52.1578947368421,
+      "meanTriangles": 98369.57894736843,
+      "textureObjects": 38,
+      "meanGpuMs": 17.686658428571427,
+      "gpuSamples": 7
+    },
+    {
+      "name": "coordinated-boss-attack-and-block",
+      "cameraMotionOnly": false,
+      "samples": 63,
+      "averageFPS": 45.12247529045832,
+      "minimumInstantaneousFPS": 18.975332072603482,
+      "meanFrameMs": 22.16190476171554,
+      "p95FrameMs": 37.69999998807907,
+      "worstFrameMs": 52.69999998807907,
+      "meanRenderSubmitMs": 10.52380952664784,
+      "meanDrawCalls": 51.15873015873016,
+      "meanTriangles": 98351.58730158731,
+      "textureObjects": 38,
+      "meanGpuMs": 16.73168525,
+      "gpuSamples": 8
+    },
+    {
+      "name": "diamond-recovery",
+      "cameraMotionOnly": false,
+      "samples": 125,
+      "averageFPS": 47.22683995853557,
+      "minimumInstantaneousFPS": 12.970168608181156,
+      "meanFrameMs": 21.17439999961853,
+      "p95FrameMs": 38.60000002384186,
+      "worstFrameMs": 77.10000002384186,
+      "meanRenderSubmitMs": 8.60320000076294,
+      "meanDrawCalls": 53.928,
+      "meanTriangles": 33509.648,
+      "textureObjects": 38,
+      "meanGpuMs": 16.377137933333334,
+      "gpuSamples": 15
+    },
+    {
+      "name": "pca-boss-battle",
+      "cameraMotionOnly": false,
+      "samples": 150,
+      "averageFPS": 43.07250538406318,
+      "minimumInstantaneousFPS": 15.649452275009578,
+      "meanFrameMs": 23.216666666666665,
+      "p95FrameMs": 30.69999998807907,
+      "worstFrameMs": 63.89999997615814,
+      "meanRenderSubmitMs": 9.903999996582668,
+      "meanDrawCalls": 61,
+      "meanTriangles": 159540,
+      "textureObjects": 41,
+      "meanGpuMs": 18.468176210526313,
+      "gpuSamples": 19
+    },
+    {
+      "name": "exile-battle",
+      "cameraMotionOnly": false,
+      "samples": 155,
+      "averageFPS": 44.22506277090641,
+      "minimumInstantaneousFPS": 17.88908764508473,
+      "meanFrameMs": 22.611612903302717,
+      "p95FrameMs": 36.10000002384186,
+      "worstFrameMs": 55.90000003576279,
+      "meanRenderSubmitMs": 11.652258066208132,
+      "meanDrawCalls": 43,
+      "meanTriangles": 51047,
+      "textureObjects": 42,
+      "meanGpuMs": 16.65109568421052,
+      "gpuSamples": 19
+    },
+    {
+      "name": "eclipse-recovery",
+      "cameraMotionOnly": false,
+      "samples": 124,
+      "averageFPS": 45.13029553025331,
+      "minimumInstantaneousFPS": 12.70648029725677,
+      "meanFrameMs": 22.158064516321307,
+      "p95FrameMs": 33.19999998807907,
+      "worstFrameMs": 78.70000004768372,
+      "meanRenderSubmitMs": 9.182258061343624,
+      "meanDrawCalls": 52.33064516129032,
+      "meanTriangles": 18979.00806451613,
+      "textureObjects": 42,
+      "meanGpuMs": 17.156176133333336,
+      "gpuSamples": 15
+    },
+    {
+      "name": "archive-old-scholar",
+      "cameraMotionOnly": false,
+      "samples": 128,
+      "averageFPS": 39.00060938452163,
+      "minimumInstantaneousFPS": 21.18644065656254,
+      "meanFrameMs": 25.640625,
+      "p95FrameMs": 37.80000001192093,
+      "worstFrameMs": 47.200000047683716,
+      "meanRenderSubmitMs": 12.472656247671694,
+      "meanDrawCalls": 118,
+      "meanTriangles": 118072,
+      "textureObjects": 43,
+      "meanGpuMs": 21.0804125625,
+      "gpuSamples": 16
+    }
+  ],
+  "chartReadyMs": 436,
+  "codexRenderCallsDuring700Ms": 0,
+  "resourceTransferBytes": 6819838,
+  "resources": [
+    {
+      "name": "assets/index-eg8D1Kw8.js",
+      "transferBytes": 195320,
+      "decodedBytes": 728394,
+      "durationMs": 52
+    },
+    {
+      "name": "assets/index-CzQi9yn5.css",
+      "transferBytes": 5576,
+      "decodedBytes": 18515,
+      "durationMs": 19
+    },
+    {
+      "name": "art/stonekeeper-portrait-3d.webp",
+      "transferBytes": 32000,
+      "decodedBytes": 31700,
+      "durationMs": 16
+    },
+    {
+      "name": "assets/Cinzel-Dzu6Mfm8.ttf",
+      "transferBytes": 125768,
+      "decodedBytes": 125468,
+      "durationMs": 56.30000001192093
+    },
+    {
+      "name": "assets/Inter-VF2RPR_K.ttf",
+      "transferBytes": 876876,
+      "decodedBytes": 876576,
+      "durationMs": 59.09999996423721
+    },
+    {
+      "name": "assets/CormorantGaramond-CENw2G75.ttf",
+      "transferBytes": 1195860,
+      "decodedBytes": 1195560,
+      "durationMs": 63.19999998807907
+    },
+    {
+      "name": "models/stonekeeper-base.glb",
+      "transferBytes": 3637988,
+      "decodedBytes": 3637688,
+      "durationMs": 1948.4000000357628
+    },
+    {
+      "name": "art/weathered-limestone.webp",
+      "transferBytes": 349992,
+      "decodedBytes": 349692,
+      "durationMs": 4.900000035762787
+    },
+    {
+      "name": "127.0.0.1:4173/favicon.ico",
+      "transferBytes": 300,
+      "decodedBytes": 0,
+      "durationMs": 6.800000011920929
+    },
+    {
+      "name": "assets/encounters-DegaKfI5.js",
+      "transferBytes": 6549,
+      "decodedBytes": 15174,
+      "durationMs": 21.099999964237213
+    },
+    {
+      "name": "data/summary.json",
+      "transferBytes": 1476,
+      "decodedBytes": 2541,
+      "durationMs": 76.40000003576279
+    },
+    {
+      "name": "data/cluster_profiles.json",
+      "transferBytes": 603,
+      "decodedBytes": 1211,
+      "durationMs": 74.80000001192093
+    },
+    {
+      "name": "data/charts.json",
+      "transferBytes": 5036,
+      "decodedBytes": 20166,
+      "durationMs": 76.5
+    },
+    {
+      "name": "data/pca_sample.json",
+      "transferBytes": 28089,
+      "decodedBytes": 191870,
+      "durationMs": 81.89999997615814
+    },
+    {
+      "name": "data/verification.json",
+      "transferBytes": 1075,
+      "decodedBytes": 5363,
+      "durationMs": 76.60000002384186
+    },
+    {
+      "name": "vendor/plotly-basic-2.35.2.min.js",
+      "transferBytes": 357330,
+      "decodedBytes": 1071091,
+      "durationMs": 88.20000004768372
+    }
+  ],
+  "errors": [],
+  "limits": "One Intel UHD-class local machine, Edge headless, loopback, unthrottled. Minimum FPS is 1000 / worst sampled frame, not sustained minimum. GPU query samples are asynchronous and disjoint-checked. Source texture and geometry bytes are estimates, not total VRAM; exclude render targets, shadows, driver storage and residency. Loading times include local shader preparation, not internet latency. Encounter phases warm shaders behind the scene fade; camera rows filter moving frames. Geometry byte sums are upper estimates of attribute/index array views; interleaved/shared arrays can overlap and are not unique allocated CPU RAM."
+}

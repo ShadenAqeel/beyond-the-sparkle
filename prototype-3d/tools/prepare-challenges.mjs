@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+const csv=fs.readFileSync(new URL('../../reference/diamonds 2.csv',import.meta.url));
+const summary=JSON.parse(fs.readFileSync(new URL('../../data/summary.json',import.meta.url)));
+if(createHash('sha256').update(csv).digest('hex')!==summary.source.csv_sha256)throw Error('Research source changed');
+const lines=csv.toString().trim().split(/\r?\n/).map(line=>line.split(',').map(value=>value.replaceAll('"','')));
+const header=lines.shift();
+const records=[lines[0],lines[2207],lines[100]].map(row=>({record:Number(row[0]),...Object.fromEntries(header.slice(1).map((key,i)=>[key,['cut','color','clarity'].includes(key)?row[i+1]:Number(row[i+1])]))}));
+fs.writeFileSync(new URL('../public/data/challenge-records.json',import.meta.url),JSON.stringify({source:'diamonds 2.csv',sha256:summary.source.csv_sha256,recordNumbering:'Original CSV ID, one based',records},null,2));
+console.log('Exported three traceable source records, including CSV record 2208 (z = 0).');

@@ -1,0 +1,60 @@
+{
+  "gpu": "Intel UHD Graphics 0x4628 via ANGLE D3D11, installed Edge headless",
+  "viewport": [
+    1440,
+    1000
+  ],
+  "pixelRatio": 1,
+  "mode": "Vite dev server, transient browser-only instrumentation; source unchanged",
+  "meshes": 1169,
+  "geometries": 1170,
+  "estimatedRGBA8TextureMiB": 48.1649,
+  "geometryBufferMiB": 3.1271,
+  "textureObjectsAllocated": 24,
+  "resourceTransferBytes": 17527064,
+  "localNavigationLoadMs": 3497,
+  "phases": [
+    {
+      "phase": "shrine-idle",
+      "samples": 112,
+      "avgFPS": 17.4067,
+      "minInstantFPS": 9.3284,
+      "p95Ms": 82,
+      "worstMs": 107.2,
+      "drawCalls": 2679,
+      "triangles": 195806
+    },
+    {
+      "phase": "flame-transition",
+      "samples": 60,
+      "avgFPS": 19.0591,
+      "minInstantFPS": 7.3475,
+      "p95Ms": 89.1,
+      "worstMs": 136.1,
+      "drawCalls": 2487.5,
+      "triangles": 188812.77
+    },
+    {
+      "phase": "crypt-descent",
+      "samples": 95,
+      "avgFPS": 15.8476,
+      "minInstantFPS": 8.8106,
+      "p95Ms": 86.2,
+      "worstMs": 113.5,
+      "drawCalls": 2317.82,
+      "triangles": 174346.1
+    },
+    {
+      "phase": "crypt-idle",
+      "samples": 80,
+      "avgFPS": 18.0477,
+      "minInstantFPS": 11.1732,
+      "p95Ms": 77.1,
+      "worstMs": 89.5,
+      "drawCalls": 1924,
+      "triangles": 154898
+    }
+  ],
+  "limits": "Single-run desktop test, not production network loading. Estimated source texture storage excludes render targets/shadows/driver overhead. No total GPU VRAM measurement. CPU render-call duration includes possible GPU blocking. GPU timing extension available but GPU timings not captured yet.",
+  "errors": []
+}

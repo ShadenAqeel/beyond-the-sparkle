@@ -1,0 +1,46 @@
+{
+  "source": "diamonds 2.csv",
+  "sha256": "fc2f171cc18eae2138d01dcca7179db3bb30ff047dceae4467a056d52133810a",
+  "recordNumbering": "Original CSV ID, one based",
+  "records": [
+    {
+      "record": 1,
+      "carat": 0.23,
+      "cut": "Ideal",
+      "color": "E",
+      "clarity": "SI2",
+      "depth": 61.5,
+      "table": 55,
+      "price": 326,
+      "x": 3.95,
+      "y": 3.98,
+      "z": 2.43
+    },
+    {
+      "record": 2208,
+      "carat": 1,
+      "cut": "Premium",
+      "color": "G",
+      "clarity": "SI2",
+      "depth": 59.1,
+      "table": 59,
+      "price": 3142,
+      "x": 6.55,
+      "y": 6.48,
+      "z": 0
+    },
+    {
+      "record": 101,
+      "carat": 0.75,
+      "cut": "Very Good",
+      "color": "D",
+      "clarity": "SI1",
+      "depth": 63.2,
+      "table": 56,
+      "price": 2760,
+      "x": 5.8,
+      "y": 5.75,
+      "z": 3.65
+    }
+  ]
+}

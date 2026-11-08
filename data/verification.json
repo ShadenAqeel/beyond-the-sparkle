@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "checks": [
+    {
+      "name": "Original rows",
+      "actual": 53940,
+      "expected": 53940,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Removed rows",
+      "actual": 47,
+      "expected": 47,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Clean rows",
+      "actual": 53893,
+      "expected": 53893,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Nonpositive dimension rows",
+      "actual": 20,
+      "expected": 20,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Missing values (source)",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Source duplicates (retained, as in notebook)",
+      "actual": 146,
+      "expected": 146,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "K-Means before silhouette (3 decimals)",
+      "actual": 0.429,
+      "expected": 0.429,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "K-Means after silhouette (3 decimals)",
+      "actual": 0.487,
+      "expected": 0.487,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "PC1 explained variance",
+      "actual": 0.6668250771834003,
+      "expected": 0.66682508,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "PC2 explained variance",
+      "actual": 0.2143955366585635,
+      "expected": 0.21439554,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Total retained variance",
+      "actual": 0.8812206138419638,
+      "expected": 0.881220613841964,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Original raw label 0 median carat",
+      "actual": 1.11,
+      "expected": 1.11,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Original raw label 0 median price",
+      "actual": 6055.5,
+      "expected": 6055.5,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Original raw label 1 median carat",
+      "actual": 0.41,
+      "expected": 0.41,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Original raw label 1 median price",
+      "actual": 1053.0,
+      "expected": 1053,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "DBSCAN before clusters",
+      "actual": 2,
+      "expected": 2,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "DBSCAN before noise",
+      "actual": 804,
+      "expected": 804,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "DBSCAN before silhouette",
+      "actual": 0.485,
+      "expected": 0.485,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "DBSCAN after clusters",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "DBSCAN after noise",
+      "actual": 311,
+      "expected": 311,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "DBSCAN after silhouette",
+      "actual": 0.558,
+      "expected": 0.558,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "before profile membership total",
+      "actual": 53893,
+      "expected": 53893,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "after profile membership total",
+      "actual": 53893,
+      "expected": 53893,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "carat standardized mean",
+      "actual": -1.3500747062110898e-16,
+      "expected": 0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "carat standardized population std",
+      "actual": 0.9999999999999999,
+      "expected": 1,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "depth standardized mean",
+      "actual": -6.976089146000115e-15,
+      "expected": 0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "depth standardized population std",
+      "actual": 1.0,
+      "expected": 1,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "table standardized mean",
+      "actual": 2.4638863388352387e-15,
+      "expected": 0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "table standardized population std",
+      "actual": 1.0,
+      "expected": 1,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "x standardized mean",
+      "actual": 4.050224118633269e-16,
+      "expected": 0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "x standardized population std",
+      "actual": 1.0,
+      "expected": 1,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "y standardized mean",
+      "actual": -2.7001494124221796e-16,
+      "expected": 0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "y standardized population std",
+      "actual": 1.0,
+      "expected": 1,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "z standardized mean",
+      "actual": 1.3500747062110898e-16,
+      "expected": 0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "z standardized population std",
+      "actual": 1.0,
+      "expected": 1,
+      "tolerance": 1e-10,
+      "passed": true
+    }
+  ]
+}

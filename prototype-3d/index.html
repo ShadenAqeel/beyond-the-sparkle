@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101519"><title>Beyond the Sparkle · The Lost Legacy</title></head>
+<body>
+<main id="world" aria-label="Interactive Forgotten Shrine"></main>
+<div class="grain" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div>
+<header><a class="brand" href="#" aria-label="Return to shrine overview"><span class="sigil">◇</span><span>BEYOND THE SPARKLE<small>THE LOST LEGACY</small></span></a><div class="tools"><button id="sound" aria-pressed="false">Sound off</button><button id="motion" aria-pressed="false">Reduce motion</button><button id="quality" aria-pressed="false">Quality mode</button><button id="journey-button">Journey</button><button id="codex-button">Research Codex</button></div></header>
+<section class="location"><p class="eyebrow" id="chapter">THE SANCTUARY / I</p><h1 id="location">The Forgotten Shrine</h1><p id="location-sub">Even in silence, something here remembers.</p></section>
+<div id="hotspots" aria-label="Places to examine"></div><div id="hover-label" role="status"></div>
+<section id="panel" class="lore-panel" hidden aria-labelledby="panel-title"><img id="portrait" src="./art/stonekeeper-portrait-3d.webp" alt="The Stonekeeper: a three-dimensional elderly scholar with spectacles, a weathered face and layered embroidered robes" hidden><button class="close" id="close-panel" aria-label="Close inspection">×</button><p class="eyebrow" id="panel-kicker"></p><h2 id="panel-title"></h2><p id="panel-copy"></p><div id="panel-extra"></div><div id="panel-actions"></div></section>
+<footer><div class="objective"><span class="tiny-diamond">◇</span><div><span class="eyebrow">A FRAGMENT OF THE LOST LEGACY</span><p id="objective">Approach the flame. Listen to what remains.</p></div></div><span id="progress" aria-live="polite"></span><button id="back" hidden>← Return to the shrine</button><span class="hint">EXPLORE WITH YOUR CURSOR <span>·</span> CLICK TO APPROACH <span>·</span> ESC TO RETURN</span></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="intro"><p class="eyebrow">BEYOND THE SPARKLE · THE LOST LEGACY</p><h2>The Forgotten<br><em>Shrine</em></h2><div class="intro-rule"></div><p>“Three diamonds stolen. Three guardians corrupted.”<br>A fading voice asks you to bring them home.</p><div class="intro-actions"><button id="enter">New Journey <span aria-hidden="true">↗</span></button><button id="continue" hidden>Continue Journey</button><button id="presenter-start">Presenter Mode</button></div><small id="load-status" role="status">Preparing the sanctuary…</small></div>
+<dialog id="codex" aria-label="Research Codex"></dialog>
+<div id="presenter-bar" hidden><span>PRESENTER · STORY SAVE UNCHANGED</span><button id="presenter-controls">Choose chapter</button><button id="return-story">Return to Story</button></div><dialog id="journey-dialog" aria-label="Journey menu"></dialog><dialog id="confirm-dialog" aria-labelledby="restart-title"><h2 id="restart-title">Begin a new journey?</h2><p>This replaces your saved story progress.</p><button id="cancel-restart" class="menu-action">Keep my journey</button><button id="confirm-restart" class="menu-action">Start a new journey</button></dialog><div id="scene-fade" hidden><p id="scene-loading" role="status">Opening the chamber…</p></div><script type="module" src="./src/main.js"></script></body></html>
+
+
+
+
+
+

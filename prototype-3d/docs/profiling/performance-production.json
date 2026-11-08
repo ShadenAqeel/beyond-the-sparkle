@@ -1,0 +1,243 @@
+{
+  "date": "2026-11-07T18:28:56.902Z",
+  "mode": "performance",
+  "url": "http://127.0.0.1:4173/",
+  "navigationMs": 1880,
+  "readyToEnterMs": 1942,
+  "inventory": {
+    "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x00004628) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "gpuTimingSupported": true,
+    "viewport": [
+      1440,
+      1000
+    ],
+    "drawingBuffer": [
+      1036,
+      720
+    ],
+    "pixelRatio": 0.72,
+    "meshes": 132,
+    "geometries": 120,
+    "sourceTextureEstimateMiB": 55.83333333333334,
+    "geometryBufferMiB": 16.89478302001953,
+    "lights": [
+      {
+        "type": "HemisphereLight",
+        "shadow": false
+      },
+      {
+        "type": "SpotLight",
+        "shadow": false,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "DirectionalLight",
+        "shadow": true,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "PointLight",
+        "shadow": false,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "PointLight",
+        "shadow": false,
+        "map": [
+          512,
+          512
+        ]
+      },
+      {
+        "type": "PointLight",
+        "shadow": false,
+        "map": [
+          512,
+          512
+        ]
+      }
+    ]
+  },
+  "phases": [
+    {
+      "name": "shrine-idle",
+      "cameraMotionOnly": false,
+      "samples": 209,
+      "averageFPS": 60.024699157888904,
+      "minimumInstantaneousFPS": 45.8715596079435,
+      "meanFrameMs": 16.659808612611304,
+      "p95FrameMs": 17.30000001192093,
+      "worstFrameMs": 21.80000001192093,
+      "meanRenderSubmitMs": 3.3540669865015023,
+      "meanDrawCalls": 121,
+      "meanTriangles": 97996,
+      "textureObjects": 15,
+      "meanGpuMs": 4.673781653846154,
+      "gpuSamples": 26
+    },
+    {
+      "name": "flame-transition",
+      "cameraMotionOnly": true,
+      "samples": 66,
+      "averageFPS": 60.04913110922348,
+      "minimumInstantaneousFPS": 56.179775243274435,
+      "meanFrameMs": 16.653030302488443,
+      "p95FrameMs": 17.100000023841858,
+      "worstFrameMs": 17.80000001192093,
+      "meanRenderSubmitMs": 3.61969697023883,
+      "meanDrawCalls": 110.25757575757575,
+      "meanTriangles": 75067.27272727272,
+      "textureObjects": 15,
+      "meanGpuMs": 3.6953510000000005,
+      "gpuSamples": 8
+    },
+    {
+      "name": "crypt-descent",
+      "cameraMotionOnly": true,
+      "samples": 168,
+      "averageFPS": 60.00428602017454,
+      "minimumInstantaneousFPS": 54.64480870757285,
+      "meanFrameMs": 16.66547619054715,
+      "p95FrameMs": 17.799999952316284,
+      "worstFrameMs": 18.30000001192093,
+      "meanRenderSubmitMs": 2.4434523813071705,
+      "meanDrawCalls": 89.7797619047619,
+      "meanTriangles": 85698.69047619047,
+      "textureObjects": 15,
+      "meanGpuMs": 7.071321523809522,
+      "gpuSamples": 21
+    },
+    {
+      "name": "crypt-idle",
+      "cameraMotionOnly": false,
+      "samples": 209,
+      "averageFPS": 60.02125154319778,
+      "minimumInstantaneousFPS": 55.24861871175526,
+      "meanFrameMs": 16.66076555035331,
+      "p95FrameMs": 17.399999976158142,
+      "worstFrameMs": 18.100000023841858,
+      "meanRenderSubmitMs": 2.0775119650877265,
+      "meanDrawCalls": 40,
+      "meanTriangles": 67902,
+      "textureObjects": 15,
+      "meanGpuMs": 3.964797230769231,
+      "gpuSamples": 26
+    },
+    {
+      "name": "pedestal-empty",
+      "cameraMotionOnly": false,
+      "samples": 209,
+      "averageFPS": 60.04539316824656,
+      "minimumInstantaneousFPS": 53.763440791299985,
+      "meanFrameMs": 16.654066985588894,
+      "p95FrameMs": 17.399999976158142,
+      "worstFrameMs": 18.600000023841858,
+      "meanRenderSubmitMs": 3.1913875586678535,
+      "meanDrawCalls": 96,
+      "meanTriangles": 46674,
+      "textureObjects": 15,
+      "meanGpuMs": 5.305844846153846,
+      "gpuSamples": 26
+    },
+    {
+      "name": "gem-recovery-and-visible",
+      "cameraMotionOnly": false,
+      "samples": 212,
+      "averageFPS": 60.017552302829465,
+      "minimumInstantaneousFPS": 55.55555555555556,
+      "meanFrameMs": 16.66179245288642,
+      "p95FrameMs": 17.30000001192093,
+      "worstFrameMs": 18,
+      "meanRenderSubmitMs": 3.5042452823440984,
+      "meanDrawCalls": 96.99528301886792,
+      "meanTriangles": 46865.09433962264,
+      "textureObjects": 15,
+      "meanGpuMs": 6.977054923076922,
+      "gpuSamples": 26
+    },
+    {
+      "name": "gate-opening",
+      "cameraMotionOnly": false,
+      "samples": 236,
+      "averageFPS": 60.02034587995931,
+      "minimumInstantaneousFPS": 46.29629637294836,
+      "meanFrameMs": 16.661016949152543,
+      "p95FrameMs": 17.5,
+      "worstFrameMs": 21.599999964237213,
+      "meanRenderSubmitMs": 2.2864406788248126,
+      "meanDrawCalls": 65.34322033898304,
+      "meanTriangles": 35699.47457627119,
+      "textureObjects": 15,
+      "meanGpuMs": 6.698965034482759,
+      "gpuSamples": 29
+    }
+  ],
+  "resourceTransferBytes": 6398459,
+  "resources": [
+    {
+      "name": "assets/index-B5WZtNrb.js",
+      "transferBytes": 175961,
+      "decodedBytes": 673498,
+      "durationMs": 62.10000002384186
+    },
+    {
+      "name": "assets/index-DvUhaBlj.css",
+      "transferBytes": 3714,
+      "decodedBytes": 10803,
+      "durationMs": 17.69999998807907
+    },
+    {
+      "name": "art/stonekeeper-portrait-3d.webp",
+      "transferBytes": 32000,
+      "decodedBytes": 31700,
+      "durationMs": 18.5
+    },
+    {
+      "name": "assets/Cinzel-Dzu6Mfm8.ttf",
+      "transferBytes": 125768,
+      "decodedBytes": 125468,
+      "durationMs": 76.80000001192093
+    },
+    {
+      "name": "assets/Inter-VF2RPR_K.ttf",
+      "transferBytes": 876876,
+      "decodedBytes": 876576,
+      "durationMs": 83
+    },
+    {
+      "name": "assets/CormorantGaramond-CENw2G75.ttf",
+      "transferBytes": 1195860,
+      "decodedBytes": 1195560,
+      "durationMs": 84.89999997615814
+    },
+    {
+      "name": "models/stonekeeper-base.glb",
+      "transferBytes": 3637988,
+      "decodedBytes": 3637688,
+      "durationMs": 738.5
+    },
+    {
+      "name": "art/weathered-limestone.webp",
+      "transferBytes": 349992,
+      "decodedBytes": 349692,
+      "durationMs": 4.399999976158142
+    },
+    {
+      "name": "127.0.0.1:4173/favicon.ico",
+      "transferBytes": 300,
+      "decodedBytes": 0,
+      "durationMs": 3.599999964237213
+    }
+  ],
+  "errors": [],
+  "limits": "Single local machine, Edge headless, unthrottled loopback. Texture/geometry byte figures are estimates, not total VRAM; render targets, shadow maps, driver overhead and GPU residency are excluded. Render-submit CPU time may include waiting for the GPU. Minimum FPS is 1000 / worst sampled frame. GPU timings are asynchronous disjoint-checked samples."
+}

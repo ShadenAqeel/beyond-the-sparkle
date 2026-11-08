@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "verified": true,
+  "source": {
+    "csv": "diamonds 2.csv",
+    "csv_sha256": "fc2f171cc18eae2138d01dcca7179db3bb30ff047dceae4467a056d52133810a",
+    "notebook": "project_PCA_1_(2).ipynb",
+    "notebook_sha256": "fa6bc90827b8014292607f2dff095ee83fb86cf3dbba7634ffdf7ea8b9d332c3",
+    "exporter_sha256": "9a53e5e415cf4883317264b04ac9000e40dac76bc53fb1db0558dfeca1d25928"
+  },
+  "metadata": {
+    "features": [
+      "carat",
+      "depth",
+      "table",
+      "x",
+      "y",
+      "z"
+    ],
+    "excluded_from_model": [
+      "price",
+      "cut",
+      "color",
+      "clarity"
+    ],
+    "scaler": "StandardScaler",
+    "pca_components": 2,
+    "kmeans": {
+      "n_clusters": 2,
+      "random_state": 42,
+      "n_init": 10
+    },
+    "silhouette": {
+      "sample_size": 3000,
+      "random_state": 42
+    },
+    "cleaning": "Remove nonpositive x/y/z OR abs(200*z/(x+y)-depth)>5. Retain duplicate records.",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0"
+    }
+  },
+  "counts": {
+    "original": 53940,
+    "removed": 47,
+    "clean": 53893,
+    "nonpositive_dimensions": 20,
+    "depth_inconsistencies": 40,
+    "both_invalid": 13,
+    "missing": 0,
+    "source_duplicates_retained": 146
+  },
+  "pca": {
+    "explained_variance_ratio": [
+      0.6668250771834003,
+      0.2143955366585635
+    ],
+    "retained": 0.8812206138419638,
+    "not_retained": 0.11877938615803618
+  },
+  "kmeans": {
+    "n_clusters": 2,
+    "silhouette": {
+      "before": 0.4288073036668764,
+      "after": 0.4871574779927999
+    }
+  },
+  "dbscan": {
+    "before": {
+      "eps": 0.5,
+      "min_samples": 10,
+      "clusters": 2,
+      "noise": 804,
+      "silhouette": 0.4849366197400133,
+      "label_counts": {
+        "-1": 804,
+        "0": 53081,
+        "1": 8
+      }
+    },
+    "after": {
+      "eps": 0.3,
+      "min_samples": 10,
+      "clusters": 1,
+      "noise": 311,
+      "silhouette": 0.5577040525816581,
+      "label_counts": {
+        "-1": 311,
+        "0": 53582
+      }
+    }
+  },
+  "caveats": {
+    "silhouette": "The 2D score is higher, but the scores are measured in different feature spaces and do not establish an overall improvement.",
+    "dbscan": "Noise (-1) is relative to density settings, not a defect classification. Silhouette includes noise as a group.",
+    "price": "Price was excluded from modeling. Price differences are associations observed after clustering, not evidence of causality or quality grades."
+  }
+}

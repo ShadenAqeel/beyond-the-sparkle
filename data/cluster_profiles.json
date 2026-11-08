@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "before": [
+    {
+      "raw_label": 0,
+      "semantic": "larger",
+      "color": "#C6A574",
+      "count": 22800,
+      "medians": {
+        "carat": 1.11,
+        "depth": 61.9,
+        "table": 58.0,
+        "x": 6.66,
+        "y": 6.65,
+        "z": 4.1,
+        "price": 6055.5
+      }
+    },
+    {
+      "raw_label": 1,
+      "semantic": "smaller",
+      "color": "#82B5C6",
+      "count": 31093,
+      "medians": {
+        "carat": 0.41,
+        "depth": 61.8,
+        "table": 57.0,
+        "x": 4.79,
+        "y": 4.8,
+        "z": 2.97,
+        "price": 1053.0
+      }
+    }
+  ],
+  "after": [
+    {
+      "raw_label": 0,
+      "semantic": "smaller",
+      "color": "#82B5C6",
+      "count": 31090,
+      "medians": {
+        "carat": 0.41,
+        "depth": 61.8,
+        "table": 57.0,
+        "x": 4.79,
+        "y": 4.8,
+        "z": 2.97,
+        "price": 1053.0
+      }
+    },
+    {
+      "raw_label": 1,
+      "semantic": "larger",
+      "color": "#C6A574",
+      "count": 22803,
+      "medians": {
+        "carat": 1.11,
+        "depth": 61.9,
+        "table": 58.0,
+        "x": 6.66,
+        "y": 6.65,
+        "z": 4.1,
+        "price": 6055.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+import { chromium } from '@playwright/test';
+import sharp from 'sharp';
+import { mkdir } from 'node:fs/promises';
+const browser = await chromium.launch({ executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', headless: true });
+const page = await browser.newPage({ viewport: { width: 768, height: 1024 } });
+await page.goto('http://127.0.0.1:5173/?profile=1');
+await page.waitForFunction(() => window.__profileWorld);
+await page.evaluate(async () => {
+  const w = window.__profileWorld; await w.ready;
+  const T = await import('/node_modules/three/build/three.module.js');
+  const s = new T.Scene(); s.background = new T.Color('#172329');
+  s.add(new T.HemisphereLight('#b7d0e0', '#232a26', 1.6));
+  const warm = new T.DirectionalLight('#ffe2b6', 2.6); warm.position.set(-2, 3, 3); s.add(warm);
+  const cool = new T.DirectionalLight('#9abbd3', 1.3); cool.position.set(2, 2, -1); s.add(cool);
+  w.npc.position.set(0, 0, 0); w.npc.rotation.y = -.08; w.npc.scale.setScalar(1); s.add(w.npc);
+  const c = new T.PerspectiveCamera(40, 768 / 1024, .05, 20); c.position.set(-.08, 1.58, 1.02); c.lookAt(0, 1.43, 0);
+  const r = new T.WebGLRenderer({ antialias: true }); r.setSize(768, 1024); r.toneMapping = T.ACESFilmicToneMapping; r.domElement.id = 'portrait-render';
+  Object.assign(r.domElement.style, { position: 'fixed', inset: '0', zIndex: '10000' }); document.body.append(r.domElement);
+  r.render(s, c);
+});
+await mkdir('qa', { recursive: true });
+await page.locator('#portrait-render').screenshot({ path: 'qa/stonekeeper-3d-portrait.png' });
+await sharp('qa/stonekeeper-3d-portrait.png').webp({ quality: 90 }).toFile('public/art/stonekeeper-portrait-3d.webp');
+await browser.close();

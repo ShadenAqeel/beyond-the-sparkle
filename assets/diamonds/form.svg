@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#2C3337"/><stop offset="1" stop-color="#101519"/></linearGradient>
+<linearGradient id="stone" x2=".8" y2="1"><stop stop-color="#2C3337"/><stop offset="1" stop-color="#1B2328"/></linearGradient>
+<radialGradient id="mist"><stop stop-color="#738F89" stop-opacity=".27"/><stop offset="1" stop-color="#738F89" stop-opacity="0"/></radialGradient>
+<radialGradient id="gold"><stop stop-color="#C6A574" stop-opacity=".4"/><stop offset="1" stop-color="#C6A574" stop-opacity="0"/></radialGradient>
+<filter id="paper"><feTurbulence baseFrequency=".42" numOctaves="3" seed="42" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".07"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+<filter id="glow"><feGaussianBlur stdDeviation="5"/></filter>
+<g id="pillar"><path d="M-48 0H48L37 38L30 350L50 366V388H-50V366L-30 350L-37 38Z" fill="url(#stone)" stroke="#738F89" stroke-opacity=".23"/><path d="M-25 48V344M-12 48V344M4 48V344M19 48V344" stroke="#101519" stroke-width="3"/><path d="M-44 16H44M-40 26H40M-38 363H38M-45 377H45" stroke="#C6A574" stroke-opacity=".22"/></g>
+<g id="lamp"><path d="M-3 4V72M-17 72H17L11 92H-11Z" fill="#1B2328" stroke="#C6A574" stroke-opacity=".7"/><ellipse cy="83" rx="50" ry="55" fill="url(#gold)"/><path d="M0 72Q-9 85 0 88Q8 82 0 72" fill="#C6A574"/></g>
+</defs><path d="M100 14L175 73L100 186L25 73Z" fill="#1B2328" stroke="#C6A574" stroke-width="3"/><path d="M100 14L70 73L100 186L130 73ZM25 73H175M70 73L100 14L130 73" fill="none" stroke="#C6A574" stroke-width="2"/><path d="M70 73L100 96L130 73L100 14Z" fill="#C6A574" opacity=".3"/></svg>

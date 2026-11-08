@@ -1,0 +1,39 @@
+﻿# Current assets and provenance
+
+The in-world Stonekeeper uses the genuine rigged **Old Man** mesh by **Bake3D**, licensed **CC BY 4.0**. Source: https://bake3d.ai/free-3d-models. License: https://creativecommons.org/licenses/by/4.0/. Embedded copyright and source metadata are preserved in `public/models/stonekeeper-base.glb`; a credit ships in `public/models/LICENSE.txt` and appears in the Research Codex. No endorsement is implied.
+
+Adaptations: simplified from 150,000 to 45,000 triangles, textures resized to 1024px and WebP-compressed, unused animations removed, clothed regions tinted, original skinned folded tunic, wool mantle, embroidered stoles and collar added, plus a modeled staff. The face, anatomy, source texture maps, skeleton and idle animation come from the licensed mesh. The clothes use original tailored surfaces and woven canvas textures. `tools/prepare-assets.mjs` reproduces the base conversion from `art-source/models/old-man-original.glb`.
+
+The current dialogue portrait, `public/art/stonekeeper-portrait-3d.webp`, is rendered from the same 3D character using `tools/render-portrait.mjs`. It carries the same attribution. The earlier illustrated cutout is **not loaded by the game**.
+
+The finished game's Hollow Scale, paired Twin Warden, Veiled Mirror, Nameless Exile, Divider, Seer and Old Scholar reuse this licensed mesh and idle clip through independent cloned skeletons. Geometry and texture resources are shared. Original scale balances, shoulder armor, hoods, measuring compass, garment tints, sizes and lighting distinguish roles. They deliberately share the source face rather than claiming to be separately authored human models. The Archive and encounter room reuse the sanctuary's materials; its books are instanced. No additional downloaded character assets are introduced.
+
+The storytelling overhaul adds original fitted breastplates, beveled armor surfaces, curved greaves/bracers, helmets, weapons, a heavy/agile pair, an open floating cowl and reflective shards, and an asymmetric damaged knight with a fractured blade. The underlying human remains the licensed skinned anatomy. Static costume surfaces batch by material; weapon pivots and rigged hit reactions remain separate. A shared deterministic canvas bump texture supplies subtle metal wear. Scholar adaptations include different posture/costume and small geometric facial-width changes to the source mesh; source facial texture identity remains recognizable. Mirror images are transparent rigged 3D variants, not sprites or live reflection captures. The economical shared anatomy remains a limitation compared with independently authored character assets.
+
+The current limestone texture is `public/art/weathered-limestone.webp`, a compressed derivative of the original generated PNG retained in `art-source/retired-illustrations/`. It is blended into deterministic masonry/paving maps. The gemstone is original geometry with a table, crown, girdle, pavilion and culet; no stock gemstone model was used. Reflection lighting is generated once into a small PMREM environment, not captured every frame.
+
+The existing fonts retain their SIL Open Font License files in `src/fonts/`. Architecture, fire, particles, surface-map generation and synthesized audio are project code assets.
+
+## Archived artwork
+
+The earlier full-length concept remains in `art-source/stonekeeper-concept.png`. The unused illustrated cutout, painted portrait, original limestone PNG and earlier compressed portrait are retained under `art-source/retired-illustrations/`, outside the public build. Their original ImageGen prompts follow for provenance. They describe the retired artwork rather than the current 3D character.
+
+## Final prompt set
+
+### Full-length source — built-in generation
+
+Use case: illustration-story. Create a production quality original dark fantasy game character asset, a single full-length elderly male ancient scholar called the Stonekeeper, isolated on genuinely transparent background. Realistic human anatomy and proportions, exceptionally detailed recognizable face visible clearly without hood shadow: long narrow weathered face, intelligent expressive pale grey-green eyes with catchlights, furrowed brows, aquiline nose, short forked silver beard, swept-back thinning silver hair, gentle melancholy dignity. Three-quarter frontal pose, looking toward viewer. Layered worn charcoal wool scholar's coat over tarnished teal linen robes, antique gold embroidered narrow stole with original abstract geometric stitchwork, leather belt, aged book and brass measuring dividers attached, fine folds and tactile cloth. One hand rests on a carved wooden walking staff capped with small antique gold ring, other holds closed weathered book. Entire figure head to boots visible, nothing cropped, slim realistic proportions. High-end hand-painted realistic cinematic concept art, exquisite face and fabric detail, warm amber key light from left and subdued cool moonlight rim from right, restrained colors #101519 #1B2328 #738F89 #C6A574 #F2EEE7. No pedestal, no scenery, no lettering, no watermark. Not a faceless wizard, no glowing eyes, no armor, no huge hat, no cartoon or low-poly shapes, no resemblance to an existing copyrighted character. Vertical portrait composition with generous transparent margins. The same face will be used for a conversation portrait.
+
+### Production cutout — built-in edit, full-length source as reference
+
+Use case: background-extraction. Remove the entire black and brown studio background and ALL light halos from this supplied character illustration, replace with genuine transparent alpha, clean precise cutout of the scholar and walking staff only. Keep the entire existing character, face, clothing, hands, staff and book exactly unchanged, including all painted lighting on the character. Preserve full-length framing. No black rectangle, no backdrop, no ground, no shadow outside the silhouette. Production sprite for a 3D scene, real transparent background.
+
+### Conversation portrait — built-in edit, full-length source as identity reference
+
+Use case: identity-preserve. Create a detailed cinematic conversation portrait of exactly the elderly scholar in the supplied image. Preserve his identity precisely: aquiline nose, intelligent expressive grey-green eyes, forehead creases, swept silver hair, forked silver beard, angular weathered face, same tarnished teal scarf and charcoal wool robe with antique gold geometric embroidered stole. Frame head and shoulders, face large and unmistakable, with entire head and hair in image, gaze toward the viewer, thoughtful empathetic expression as if explaining a discovery. High-end realistic painted dark fantasy game illustration with very detailed natural skin, eyes with catchlights, fabric weave, restrained warm candlelight left and cool blue rim right. Dark softly blurred crypt backdrop with subtle stone, no other people. Vertical portrait, no lettering or watermark. Original character, no resemblance to any existing game design.
+
+### Weathered stone — built-in generation
+
+Use case: stylized-concept. Production game material asset: a seamless tileable square albedo texture of ancient weathered cool grey limestone, flat orthographic surface scan, evenly lit with no directional shadows, no perspective. Dense fine natural mineral grain, small pits and eroded pores, subtle blue-grey and warm desaturated grey variation, extremely subtle thin hairline cracks, occasional tiny dark aged damp speckles. Restrained medium grey tones suitable for a dark gothic sanctuary carved stone column. Entire image filled with the continuous stone surface. No bricks, no block outlines, no mortar, no scene, no objects, no border, no text. Physically believable detailed natural stone, not a photograph of a building. Seamless edges, no large focal features, no dramatic veins, no painted lighting.
+
+

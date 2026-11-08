@@ -1,0 +1,9 @@
+@keyframes enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+[data-motion=full] .landing-copy,[data-motion=full] .location-heading,[data-motion=full] .dialogue-panel,[data-motion=full] .reward-content,[data-motion=full] .codex-content{animation:enter .55s ease-out both}
+[data-motion=full] .title-stone>img,[data-motion=full] .reward-stone>img{animation:float 7s ease-in-out infinite}
+[data-motion=full] .stone-orbit{animation:orbit 90s linear infinite}
+.button,.hotspot-symbol{transition:background-color .15s,border-color .15s,color .15s}
+[data-motion=reduced] *,[data-motion=reduced] *:before,[data-motion=reduced] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
